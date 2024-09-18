@@ -77,12 +77,42 @@ def main():
         <style>
             body {
                 font-family: 'Cabin', sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            .title {
+                text-align: center;
+                color: #4A90E2;
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+            .subheader {
+                color: #333;
+                margin-top: 20px;
+            }
+            .error-message {
+                color: #e74c3c; /* Red color for error messages */
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            .contributor {
+                background-color: #ffffff;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            .horizontal-line {
+                margin: 40px 0;
+                border: 1px solid #e0e0e0;
             }
         </style>
         """, unsafe_allow_html=True)
 
-    st.title("MATH319 - Secure file storage project(AES)")
-    st.markdown(""" AES (Advanced Encryption Standard) is a secure symmetric key encryption method that encrypts data in 128-bit blocks using key sizes of 128, 192, or 256 bits, making it widely used for protecting sensitive information. """)
+    st.markdown('<div class="title">MATH319 - Secure File Storage Project (AES)</div>', unsafe_allow_html=True)
+    st.markdown(""" 
+        AES (Advanced Encryption Standard) is a secure symmetric key encryption method that encrypts data in 128-bit blocks using key sizes of 128, 192, or 256 bits, making it widely used for protecting sensitive information.
+    """)
 
     app = AESFileEncryptionApp()
 
@@ -109,9 +139,10 @@ def main():
         password = st.text_input("Enter the password used for encryption", type="password")
         uploaded_file = st.file_uploader("Choose a file to decrypt", type=["txt", "pdf", "jpg", "png", "csv"])
 
+        error_message = ""
         if uploaded_file is not None and password:
-            decrypted_file_path = app.decrypt_file(uploaded_file, password)
-            if "decrypted_" in decrypted_file_path:
+            try:
+                decrypted_file_path = app.decrypt_file(uploaded_file, password)
                 st.success(f"File decrypted successfully: {decrypted_file_path}")
                 with open(decrypted_file_path, "rb") as f:
                     st.download_button(
@@ -119,11 +150,14 @@ def main():
                         data=f,
                         file_name=decrypted_file_path
                     )
-            else:
-                st.error(decrypted_file_path)
+            except Exception:
+                error_message = "Incorrect password or file format. Please check and try again."
+
+        if error_message:
+            st.error(error_message, icon="🚫")
 
     # Contributor section
-    st.markdown("---")  # Add a horizontal line for separation
+    st.markdown("<div class='horizontal-line'></div>", unsafe_allow_html=True)
     st.subheader("Contributors")
     st.write("""
     - Yazeed Asim Alramadi
