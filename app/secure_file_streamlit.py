@@ -72,11 +72,17 @@ class AESFileEncryptionApp:
         return decrypted_file_path
 
 def main():
-    # Title and introduction for the Streamlit app
-    st.title("🔒 Secure File - Encrypt & Decrypt Files (AES-256)")
+    # change font to Cabin
     st.markdown("""
-    Welcome to the AES Secure File application! Use this app to encrypt and decrypt files securely using a password.
-    """)
+        <style>
+            body {
+                font-family: 'Cabin', sans-serif;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+
+    st.title("MATH319 - Secure file storage project(AES)")
+    st.markdown(""" AES (Advanced Encryption Standard) is a secure symmetric key encryption method that encrypts data in 128-bit blocks using key sizes of 128, 192, or 256 bits, making it widely used for protecting sensitive information. """)
 
     app = AESFileEncryptionApp()
 
@@ -115,6 +121,17 @@ def main():
                     )
             else:
                 st.error(decrypted_file_path)
+
+    # Contributor section
+    st.markdown("---")  # Add a horizontal line for separation
+    st.subheader("Contributors")
+    st.write("""
+    - Yazeed Asim Alramadi
+    - Salman Saleh Alkhalifah
+    - Mohammed Ali Aldubayyan
+    - Abdulrrahman Abdullah Alowaymir
+    - Salman Mohammed Alayed
+    """)
 
 if __name__ == "__main__":
     main()

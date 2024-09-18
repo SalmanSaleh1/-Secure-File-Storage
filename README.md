@@ -33,5 +33,5 @@ The Secure File Storage project provides a robust solution for securely encrypti
 - **Yazeed Asim Alramadi**
 - **Salman Saleh Alkhalifah**
 - **Mohammed Ali Aldubayyan**
-- **Abdulrrahman Alowaymir**
+- **Abdulrrahman Abdullah Alowaymir**
 - **Salman Mohammed Alayed**
