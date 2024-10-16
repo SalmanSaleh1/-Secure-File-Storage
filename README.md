@@ -12,20 +12,6 @@ The Secure File Storage project provides a robust solution for securely encrypti
 - **AES Encryption**: Utilizes AES-256 encryption to ensure strong data protection.
 - **Decryption**: Securely decrypts files with the correct password.
 
-## Getting Started
-
-To set up and run the project, follow these steps:
-
-1. Ensure Docker is installed on your machine.
-2. Start Docker.
-3. Open a terminal and navigate to the project directory.
-4. Run the following commands:
-
-   ```bash
-   docker-compose down
-   docker-compose up --build
-This will start the application. Once it's running, open your web browser and go to http://localhost:5000.
-
 ## How It Works
 
 ### Encryption
