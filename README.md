@@ -28,6 +28,70 @@ The Secure File Storage project provides a robust solution for securely encrypti
 3. The key is derived using the same password and salt.
 4. The file is decrypted, unpadded, and saved.
 
+## How to Run
+
+### 1. Prerequisites
+
+Ensure you have the following installed on your system:
+- Docker
+- Python 3.10 or above (if running locally without Docker)
+
+### 2. Running the Application with Docker
+
+To run the application using Docker, follow these steps:
+
+1. **Clone the Repository**:
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2. **Build the Docker Image**:
+    Make sure you have Docker installed, and then build the Docker image using:
+    ```bash
+    docker build -t secure-file-storage .
+    ```
+
+3. **Run the Docker Container**:
+    After the image is built, run the container with:
+    ```bash
+    docker run -p 8501:8501 secure-file-storage
+    ```
+
+4. **Access the Application**:
+    Open a browser and navigate to:
+    ```
+    http://localhost:8501
+    ```
+
+### 3. Running the Application Locally (Without Docker)
+
+If you prefer to run the application locally without Docker, follow these steps:
+
+1. **Clone the Repository**:
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2. **Install Dependencies**:
+    Install the required Python packages by running:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Run the Application**:
+    Start the Streamlit app by running:
+    ```bash
+    streamlit run secure_file_streamlit.py
+    ```
+
+4. **Access the Application**:
+    Open a browser and go to:
+    ```
+    http://localhost:8501
+    ```
+
 ## Contributors
 
 - **Yazeed Asim Alramadi**
