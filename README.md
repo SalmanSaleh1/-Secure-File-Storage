@@ -64,34 +64,6 @@ To run the application using Docker, follow these steps:
     http://localhost:8501
     ```
 
-### 3. Running the Application Locally (Without Docker)
-
-If you prefer to run the application locally without Docker, follow these steps:
-
-1. **Clone the Repository**:
-    ```bash
-    git clone <repository-url>
-    cd <repository-directory>
-    ```
-
-2. **Install Dependencies**:
-    Install the required Python packages by running:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Run the Application**:
-    Start the Streamlit app by running:
-    ```bash
-    streamlit run secure_file_streamlit.py
-    ```
-
-4. **Access the Application**:
-    Open a browser and go to:
-    ```
-    http://localhost:8501
-    ```
-
 ## Contributors
 
 - **Yazeed Asim Alramadi**
